@@ -1,0 +1,132 @@
+@mixin table-responsive {
+  border: 0;
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 1px solid $input-border;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+    font-size: .9rem;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  // Hide responsive head labels
+  &.head-label-hide {
+    td:before {
+      display: none;
+    }
+  }
+}
+
+.table {
+  .sortable {
+    cursor: pointer;
+
+    &:before {
+      content: "\f0dc";
+      font: normal normal normal 14px/1 FontAwesome;
+      margin-right: 5px;
+    }
+  }
+
+  .st-sort-ascent:before {
+    content: "\f0de";
+  }
+
+  .st-sort-descent:before {
+    content: "\f0dd";
+  }
+}
+
+.table-responsive {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin:0;
+  padding:0;
+  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    @include table-responsive;
+  }
+
+  tr {
+    padding: 5px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.force-table-responsive {
+  @include table-responsive;
+}
+
+.table-list {
+  td {
+    padding: $spacing-base-vert/2 $spacing-base-hor;
+    vertical-align: text-top;
+    &:first-child {
+      width: 40%;
+    }
+  }
+
+  .key {
+    color: $color-gray-dark;
+    flex: 1;
+  }
+
+  .value {
+    color: $color-gray-darker;
+    flex: 2;
+  }
+
+  // Colorize icons
+  .fa-check {
+    color: $brand-success;
+  }
+  .fa-minus {
+    color: $brand-danger;
+  }
+}
+
+.icon-list {
+  padding-left: 0;
+  list-style: none;
+
+  i {
+    width: 15px;
+    font-size: $font-size-icon-base;
+  }
+
+  span {
+    display: inline-block;
+    padding: $spacing-base-vert/2 $spacing-base-hor;
+    padding-left: 5px;
+  }
+}

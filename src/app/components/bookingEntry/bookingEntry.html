@@ -1,0 +1,8 @@
+<div>
+  <div class="text-accent">{{ booking.amount | localize:'currency' }}</div>
+  <span
+    *ngIf="booking.interval" 
+    class="text-decent">
+      {{ 'intervals.' + booking.interval | translate }}
+  </span>
+</div>

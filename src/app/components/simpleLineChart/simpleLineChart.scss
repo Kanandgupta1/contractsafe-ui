@@ -1,0 +1,18 @@
+.simple-line-chart-component {
+  position: relative;
+  overflow: hidden;
+
+  chart {
+    display: block;
+    margin: 0 -30px;
+  }
+
+  .highcharts-label {
+    position: absolute;
+    top: 0 !important;
+  }
+
+  .highcharts-background {
+    fill: transparent;
+  }
+}

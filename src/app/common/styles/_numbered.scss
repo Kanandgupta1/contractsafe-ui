@@ -1,0 +1,13 @@
+.counter-reset {
+  counter-reset: circle-counter;
+}
+
+.numbered:before {
+  content: counter(circle-counter);
+  counter-increment: circle-counter;
+}
+
+.numbered-dot:before {
+  content: counter(circle-counter) ". ";
+  counter-increment: circle-counter;
+}

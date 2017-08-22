@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" ng-strict-di>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title [translate]="app.title">Vertragsmanager</title>
+    <meta name="google-site-verification" content="1wBZ9jyff0fsAJt-P1jcLal7BtC71QfW365Nk5gRUHw" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="description" content="">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABV0lEQVR42mNgGHTgzEwG1hc7Gbj/r2JgQ5NihGLc4PtJBqdvx9iPfD/Geuz7UZaWn8cZNGFywQl5qqGxuQm4NZ9iUAJqfvT9OPuvH8eYfdDlQ+Ly6iMS8v+GxOQkYnXJj6MsbkDN/74f43jz5RibLrKcf3SuVlh83qcwoCHBUXmqWA34dpTF8vsx9h/fjrN//3WSxRLZ7+GxuXUgQ/D6//8ZBhGgF66AXPHtGNsOXIH3v56BCachP46zFH0/zvEf7JWjLK3/9zNwYFh0nkEAhLG7Yj8Dy9ejrL0QQ9i+fTnKshEjsI8zJ/w6wWqB2ysXGbi/H2NbBHTFH5BB346zffh2jKXr+zEW+69HWOqAcj9AAY4/PG4zsH8/xhwHNOAlxDVQb4HDh/3Rj6MMykSlyo87GIS+HWUq+36U/TDQkFPAWDry5TCDC8nJG5Ss/4OSNzCZD77MBwAgoKi99hIC5wAAAABJRU5ErkJggg==">
+    <base href="/">
+
+    <!-- Inline CSS to avoid flickering when style has been loaded -->
+    <style type="text/css">
+      .app-loading {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+        font-size: 14px;
+        color: #8D99A6;
+        line-height: 1.42857;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 999999;
+        text-align: center;
+      }
+      .app-loading .messaging {
+        position: absolute;
+        margin-top: -100px;
+        text-align: center;
+        top: 60%;
+        width: 100%;
+      }
+      .app-loading .messaging h1 {
+        font-size: 36px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 1.1;
+        font-weight: 500;
+      }
+      .app-loading .messaging p {
+        margin: 0 0 10px;
+      }
+
+      .app-loading .hero {
+        margin: -40px auto 0;
+        height: 150px;
+        width: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .default .app-loading .hero {
+        background-image: url(//cdn.contractsafe.fino.digital/default/images/hero-loading.svg);
+      }
+
+      .professional .app-loading .hero {
+        background-image: url(//cdn.contractsafe.fino.digital/professional/images/loading.gif);
+      }
+
+      .app-loading h3 {
+        margin-top: 0;
+      }
+
+      .logo-fino {
+        display: inline-block;
+        height: 12px;
+        width: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(//cdn.contractsafe.fino.digital/shared/images/logo.png);
+      }
+
+      .loading-bottom {
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+      }
+
+      .bottom-text {
+        line-height: 12px;
+      }
+    </style>
+  </head>
+  <body md-no-ink>
+
+    <bootstrap>  
+      <div class="app-loading">
+        <div class="messaging">
+          <div class="loading-content">
+            <div class="hero"></div>
+          </div>
+          <div class="loading-bottom">
+              <span class="bottom-text">powered by</span>
+              <div class="logo-fino"></div>
+          </div>
+        </div>
+      </div>
+    </bootstrap>  
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="text-centered fill-horizontal fill-vertical flex-center">
+  <div class="inner-box">
+    <div class="image image-login margin-top-double"></div>
+    <p class="text-title">
+      {{ 'error.page.title' | translate }}
+    </p>
+    <p class="text-description" [innerHTML]="'error.page.description' | translate"></p>
+    <a [routerLink]="returnTo">
+      <action-button type="submit">{{ 'error.cta' | translate }}</action-button>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="flex-center-child flex-center-column">
+  <slider [swipes]="options.swipes" [(swiper)]="options.parent.swiper">
+    <ng-template #swipeTemplate let-swipe>
+      <div class="inner-box margin-top-half">
+        <div class="image" [ngClass]="'image-' + swipe"></div>
+        <p class="text-title">{{ 'slider.' + swipe + '.title' | translate }}</p>
+        <p class="text-description">{{ 'slider.' + swipe + '.description' | translate }}</p>
+      </div>
+    </ng-template>
+  </slider>
+</div>

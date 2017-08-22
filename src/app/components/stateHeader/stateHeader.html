@@ -1,0 +1,111 @@
+<div 
+  class="state-header"
+  [ngClass]="{
+    'padding-bottom-base': hasDetailContent && !expanded
+  }">
+  <div class="state-header-wrapper">
+
+    <div class="state-header-content flex-center-row padding-hor-half">
+      <div class="flex-favorite-child">
+        <a 
+          class="hide-link"
+          [routerLink]="[left]">
+          <action-icon
+            *ngIf="left"
+            [iconClass]="'fa-state-header fa-main ' + (leftIcon || 'fa-chevron-left')">
+          </action-icon>
+        </a>
+      </div>
+      <h4 
+        *ngIf="header"
+        class="header-container position-center margin-none text-centered padding-vert-base">
+        {{ header | translate }}
+      </h4>
+      <div class="flex-favorite-child text-right">
+        <a 
+          class="hide-link"
+          [routerLink]="[right]">
+          <action-icon
+            *ngIf="right"
+            [iconClass]="'fa-state-header fa-main ' + (rightIcon || 'fa-plus')">
+          </action-icon>
+        </a>
+        <ng-content select="[summary-right]"></ng-content>
+      </div>
+    </div>
+
+    <div 
+      class="state-summary text-centered"
+      [ngClass]="{
+        'no-background' : !expanded,
+        'no-content': noContent,
+        'no-detail-content': !hasDetailContent && !noContent
+      }">
+
+      <div
+        #summaryIconContainer
+        [ngClass]="{
+          'absolute-container': left || right,
+          'padding-base': !left && !right
+        }"
+        class="summary-icon-container">
+        <div class="summary-icon">
+          <div 
+            #summaryIcon
+            class="summary-icon-content">
+            <ng-content select="[summary-icon]"></ng-content>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        #summaryContentContainer
+        class="summary-content">
+        <slide-in-container
+          #summaryContentSlider
+          [fadeImmediately]="true">
+          <div 
+            #summaryContent
+            *ngIf="!noContent"
+            class="padding-hor-base padding-vert-half">
+              <ng-content select="[summary-content]"></ng-content>
+          </div>
+        </slide-in-container>
+      </div>
+
+      <div 
+        *ngIf="hasDetailContent && !noContent"
+        class="summary-bottom">
+        <card
+            (click)="expand()"
+            touchEffect>
+          <div 
+            card-content 
+            class="padding-hor-half padding-vert-quarter">
+            <i
+              class="fa-small margin-hor-half"
+              [ngClass]="{
+                'fa-caret-up': expanded,
+                'fa-caret-down': !expanded
+              }">
+            </i>
+            <span class="text-decent margin-right-half">{{ 'stateSummary.detail' | translate }}</span>
+          </div>
+        </card>
+      </div>
+
+    </div>
+  </div>
+
+  <div 
+    class="summary-detail-container" 
+    [ngClass]="{
+      'expanded': expanded
+    }">
+    <div 
+      #summaryDetail
+      class="summary-detail-content">
+      <ng-content select="[summary-detail]"></ng-content>
+    </div>
+  </div>
+</div>

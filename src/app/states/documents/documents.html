@@ -1,0 +1,24 @@
+<div class="fill-horizontal documents-component">
+  <state-header 
+    [left]="'/app/detail/' + id"
+    [(expanded)]="expanded"
+    header="documents.title">
+    <hero-board
+      summary-content
+      [text]="'documents.description' | translate"
+      [heroEmotion]="heroEmotion">
+    </hero-board>
+  </state-header>
+
+  <div
+    *ngIf="!documentIds.length"
+    class="margin-vert-double text-centered text-important inner-box">
+    {{ 'documents.none' | translate }}
+  </div>
+
+  <documents-viewer 
+    [contractId]="id"
+    [documentIds]="documentIds"
+    (documentsChanged)="documentsChanged($event)">
+  </documents-viewer>
+</div>

@@ -1,0 +1,31 @@
+$checkbox-size : 30px;
+$checkbox-icon-size: 25px;
+
+.checkbox {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: $checkbox-size;
+  width: $checkbox-size;
+
+  .border-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .check {
+    opacity: 0;
+    font-size: $checkbox-icon-size;
+    line-height: $checkbox-size;
+  }
+
+  &.checked .check {
+    opacity: 1;
+  }
+
+  &:hover .border-box {
+    border-width: 2px;
+  }
+}

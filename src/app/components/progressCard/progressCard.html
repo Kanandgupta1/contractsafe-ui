@@ -1,0 +1,18 @@
+<card class="progress-card-component">
+  <div 
+    card-content
+    touchEffect
+    class="flex-center-row padding-vert-half">
+    <div class="progress-chart padding-hor-base">
+      <complete-progress [value]="progress" [simple]="true"></complete-progress>
+    </div>
+    <div class="flex-favorite-child padding-right-base">
+      <div class="text-bold">{{ header | translate }}</div>
+      <div>{{ subheader | translate }}</div>
+    </div>
+    <i
+      *ngIf="icon"
+      class="padding-hor-base fa {{icon}}">
+    </i>
+  </div>
+</card>

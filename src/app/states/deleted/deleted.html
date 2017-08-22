@@ -1,0 +1,12 @@
+<div class="text-centered fill-horizontal fill-vertical flex-center">
+  <div class="inner-box">
+    <div class="image-onboarding image-sad margin-top-double"></div>
+    <p class="text-title">
+      {{ 'deleted.page.title' | translate }}
+    </p>
+    <p class="text-description" [innerHTML]="'deleted.page.description' | translate"></p>
+    <a [routerLink]="['/app/login']">
+      <action-button type="submit">{{ 'deleted.cta' | translate }}</action-button>
+    </a>
+  </div>
+</div>

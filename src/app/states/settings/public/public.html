@@ -1,0 +1,12 @@
+<div class="fill-horizontal public-component">
+  <state-header 
+    header="{{ 'settings.' + type + '.title' }}"
+    [left]="backAddress" 
+    leftIcon="fa-chevron-left">
+  </state-header>
+
+  <div class="padding-base">
+    <!-- TODO Not the best way to do, but no suitable markdown directive found. Find one -->
+    <div [innerHTML]="markdown | MarkdownToHtml"></div>
+  </div>
+</div>

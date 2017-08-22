@@ -1,0 +1,19 @@
+@import '~@fino/ng2-styles/helper/animations';
+
+.pull-to-refresh-component {
+  @include expandable('.refresh-container', '.refresh-content');
+
+  .refresh-content, .refresh-content .fa {
+    background-color: $accent-color;
+    color: $text-color-lighter;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+
+  .swiper-circle {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    background-color: $primary-contrast-color;
+  }
+}

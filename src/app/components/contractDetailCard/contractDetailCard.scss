@@ -1,0 +1,14 @@
+.contract-detail-card-component {
+  .contract-icon {
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="fill-horizontal overview-component">
+  <state-header 
+    header="settings.overview.title"
+    left="/app/list">
+  </state-header>
+
+  <div class="flex-center padding-base hero-container fill-horizontal">
+   <hero></hero>
+  </div>
+  <a class="hide-link">
+    <div *ngFor="let route of routes; let f = first">
+
+      <slide-in-container>
+        <div
+          class="setting-route padding-hor-base padding-vert-quarter"
+          [routerLink]="getLink(route)"
+          [ngClass]="{
+            'first': f
+          }"
+          touchEffect>
+          <h4>{{ 'settings.' + route + '.title' | translate }}<i class="fa fa-caret-right pull-right"></i></h4>
+        </div>
+      </slide-in-container>
+
+    </div>
+  </a>
+
+  <slide-in-container>
+    <div
+      class="setting-route padding-hor-base padding-vert-quarter"
+      (click)="openDialog()"
+      touchEffect>
+      <h4>
+        {{ 'settings.delete' | translate }}
+      </h4>
+    </div>
+  </slide-in-container>
+
+  <confirm-dialog 
+    name="deleteAccount"
+    [(isOpen)]="dialogOpen"
+    (confirm)="deleteAccount()">
+    <div class="image image-tresi-small image-sad pull-right"></div>
+  </confirm-dialog>
+</div>

@@ -1,0 +1,10 @@
+.news-feed-card-component {
+  action-button {
+    width: 46%;
+    float: right;
+
+    &.button-decent {
+      float: left;
+    }
+  }
+}

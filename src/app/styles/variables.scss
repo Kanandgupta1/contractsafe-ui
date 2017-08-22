@@ -1,0 +1,72 @@
+@import '~@fino/ng2-styles/themes/tresi';
+
+// --------------------------------------------------
+// Hero
+// --------------------------------------------------
+$hero-height              : 300px !default;
+
+// --------------------------------------------------
+// Navbar
+// --------------------------------------------------
+$navbar-height                    : 50px !default;
+$navbar-brand-logo-height         : $navbar-height - 10 !default;
+$navbar-brand-logo-order          : 0 !default;
+$navbar-menu-order                : 1 !default;
+$navbar-account-order             : 2 !default;
+$navbar-default-color             : $color-gray-dark !default;
+$navbar-default-bg                : #fff !default;
+$navbar-default-border            : darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-color        : $color-gray-dark !default;
+$navbar-default-link-hover-color  : $color-gray-darker !default;
+$navbar-default-link-hover-bg     : transparent !default;
+$navbar-default-link-active-color : $primary-color !default;
+$navbar-default-link-active-bg    : transparent !default;
+
+// --------------------------------------------------
+// Progress
+// --------------------------------------------------
+$progress-indicator-width: 7px !default;
+
+// --------------------------------------------------
+// PDF Viewer
+// --------------------------------------------------
+$pdf-viewer-height: 400px;
+
+// --------------------------------------------------
+// Bootstrap Variables
+// --------------------------------------------------
+$bootstrap-sass-asset-helper: true;
+
+// Onboarding
+$onboarding-image-height: 100px;
+$onboarding-desktop-width: 600px;
+$onboarding-desktop-height: 700px;
+
+// Cards
+$card-shadow: 0 1px 6px 0px rgba(0,0,0,0.2) !default;
+$card-shadow-icon: 4px 1px 6px 0px rgba(0,0,0,0.2) !default;
+$card-shadow-error: 0 1px 6px 0px $brand-danger !default;
+$card-shadow-success: 0 1px 6px 0px $brand-success !default;
+$card-border-success: 1px solid $brand-success !default;
+$card-border-error: 1px solid $brand-danger !default;
+$bank-card-height: 150px;
+
+// Header
+$state-header-bottom-height: $spacing-base-vert/2 !default;
+$state-header-background: $bg-color !default;
+$state-header-bottom-radius: 10% !default;
+$state-summary-background: $accent-color !default;
+$state-header-icon-color: $accent-color !default;
+$state-header-color: $color-body !default;
+$state-summary-color: $text-color-lighter !default;
+$state-summary-icon-border-width: 3px !default;
+$state-summary-symbol-border-color: $accent-color !default;
+$state-header-card-border-radius: 20px !default;
+
+// Hero
+$hero-display: inline-block !default;
+
+// Documents
+$document-viewer-content-height: 200px !default;
+
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';

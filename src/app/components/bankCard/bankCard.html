@@ -1,0 +1,18 @@
+<card>
+  <div 
+    class="bank-card-component padding-half flex-parent"
+    card-content
+    touchEffect>
+    <div class="padding-half app-background flex-favorite-child flex-center">
+      <ng-content></ng-content>
+    </div>
+    <div class="padding-top-half">
+      <div 
+        *ngIf="bank.BIC"
+        class="text-decent padding-bottom-quarter">
+        {{ bank.BIC }}
+      </div>
+      <div>{{ bank.shortName | translate }}</div>
+    </div>
+  </div>
+</card>

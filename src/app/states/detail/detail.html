@@ -1,0 +1,92 @@
+<div class="fill-horizontal detail-component">
+  <state-header 
+    left="/app/list"
+    [right]="'/app/documents/' + id"
+    rightIcon="fa-file-text"
+    [(expanded)]="expanded">
+    <div 
+      summary-icon
+      class="circle app-background">
+      <div class="circle-content">
+        <logo [partner]="contract"></logo>
+      </div>
+    </div>
+    <div 
+      class="title-container padding-bottom-half"
+      summary-content>
+      <div class="margin-none text-title">{{ contract.name }}</div>
+      <!--<span>{{ contract.category }}</span>-->
+    </div>
+    <!-- TODO Show edit view -->
+    <div summary-detail>
+      <formular 
+        [formGroups]="formGroups"
+        (modelChange)="saveDetails($event)"
+        [submitBusy]="saveBusy"
+        [model]="contract"
+        [autosave]="true">
+      </formular>
+    </div>
+  </state-header>
+
+  <div class="padding-base">
+    <div
+      *ngIf="incomplete"
+      (click)="expanded = true"
+      class="hide-link">
+      <progress-card 
+        [progress]="contract.completed"
+        header="details.incomplete.title"
+        subheader="details.incomplete.subtitle">
+      </progress-card>
+    </div>
+  </div>
+
+  <div class="padding-bottom-base">
+    <compare-view
+      *ngIf="canCompare"
+      [value]="amount"
+      [compareValue]="peerGroupValue"
+      [valueText]="'intervals.' + contract.duration.interval"
+      compareText="peerGroup.value"
+      unit="currency">
+    </compare-view>
+    <div
+      *ngIf="!canCompare"
+      class="text-centered text-important inner-box">
+      <hr>
+      <div>{{ 'peerGroup.none' | translate }}</div>
+      <div class="text-decent">{{ 'peerGroup.fill' | translate }}</div>
+      <hr>
+    </div>
+  </div>
+
+  <div *ngIf="bookingHistoryChart.length">
+    <h4 class="text-centered">{{ 'details.bookingHistory.title' | translate }}</h4>
+    <simple-line-chart 
+      [values]="bookingHistoryChart" 
+      unit="currency"
+      valueProperty="amount"
+      textProperty="group">
+    </simple-line-chart>
+  </div>
+
+   <div 
+    *ngIf="!expanded"
+    class="icon-container padding-base">
+    <action-icon 
+      [border]="true" 
+      [circle]="true" 
+      [inverted]="true"
+      iconClass="fa-trash" 
+      (click)="dialogOpen = true">
+    </action-icon>
+  </div> 
+
+  <confirm-dialog 
+    name="deleteContract"
+    [(isOpen)]="dialogOpen"
+    (confirm)="deleteContract()">
+    <div class="image image-tresi-small image-sad pull-right"></div>
+  </confirm-dialog>
+</div>

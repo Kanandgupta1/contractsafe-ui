@@ -1,0 +1,54 @@
+.onboarding-container, .onboarding-desktop-container {
+  width: 100%;
+
+  md-card-title {
+    font-size: inherit;
+  }
+
+  .slider .slider-bullets {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .loading-container {
+    text-align: left;
+
+    ul {
+      width: 230px;
+    }
+
+    li {
+      display: block;
+      opacity: 0;
+    }
+  }
+
+  .table-container {
+    text-align: left;
+    font-size: 80%;
+    width: 100%;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  onboarding-bank, onboarding-login {
+    height: 100%;
+  }
+
+  .onboarding-content {
+    padding-bottom: 70px;
+  }
+
+  .bank-container {
+    position: relative;
+  }
+
+  .bank-icon {
+    border: 2px solid #fff;
+    border-radius: 25px;
+    height: 100px;
+    width: 100px;
+  }
+}

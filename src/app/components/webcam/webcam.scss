@@ -1,0 +1,18 @@
+.webcam-component {
+  position: relative;
+  overflow: hidden;
+
+  .webcam-footer {
+    position: absolute;
+    bottom: 0;
+
+    .circle {
+      padding: 5px;
+    }
+
+    .inner-circle {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

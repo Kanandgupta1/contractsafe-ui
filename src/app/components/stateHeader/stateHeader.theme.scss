@@ -1,0 +1,48 @@
+@import '~@fino/ng2-styles/helper/animations';
+
+.state-header {
+  .state-header-wrapper {
+    border-bottom-left-radius: $state-header-bottom-radius;
+    border-bottom-right-radius: $state-header-bottom-radius;
+    background: $state-header-background;
+    color: $state-header-color;
+  }
+
+  .completed-badge {
+    border-bottom-right-radius: $border-radius-base;
+    background-color: $highligh-color;
+  }
+
+  // State summary
+  .summary-detail-container {
+    background-color: $state-summary-background;
+    border-bottom: $border-standard;
+  }
+
+  &.no-content {
+    .summary-bottom {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .summary-content, .summary-bottom {
+    color: $state-summary-color;
+    background-color: $state-summary-background;
+  }
+
+  .summary-bottom {
+    height: $state-header-bottom-height;
+  }
+
+  .summary-icon {
+    border-width: $state-summary-icon-border-width;
+    border-color: $state-summary-symbol-border-color;
+    
+    .summary-icon-content {
+      padding: 5px;
+    }
+  }
+
+  @include expandable('.summary-detail-container', '.summary-detail-content', inline-block);
+}

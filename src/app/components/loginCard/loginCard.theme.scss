@@ -1,0 +1,15 @@
+.login-card-component {
+  .btn-container {
+    position: relative;
+
+    action-button {
+      position: absolute;
+      transform: translateX(-50%) translateY(50%);
+    }
+  }
+
+  .login-header {
+    background-color: $color-gray-light;
+    border-radius: $border-radius-base;
+  }
+}

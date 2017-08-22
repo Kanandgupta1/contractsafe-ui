@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.loading-component {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100000000;
+
+  .loading-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.7);
+    /*background-image: url(https://img.clipartfox.com/04da3594400d1f6a1cde4aa5a4a19b78_-black-and-white-online-images-white_2000-1333.png);
+    filter: blur(200px);*/
+  }
+
+  .loading-content {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: $card-shadow;
+  }
+}

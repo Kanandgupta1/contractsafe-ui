@@ -1,0 +1,131 @@
+@keyframes hideLock {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: -$onboarding-image-height - 50px;
+  }
+}
+
+img.small, .image-small-container {
+  width: 35px;
+  border-radius: 10px;
+}
+
+.image-tresi-small  {
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  margin-right: $spacing-base-hor;
+}
+
+.image {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.image-onboarding {
+  @extend .image;
+
+  height: $onboarding-image-height;
+  width: $onboarding-image-height;
+  background-position-y: 100%;
+  margin: 0 auto;
+  margin-bottom: $spacing-base-vert;
+}
+
+.image-onboarding-slider {
+  @extend .image-onboarding;
+
+  height: $onboarding-image-height * 1.5;
+  width: $onboarding-image-height * 1.5;
+  margin-bottom: $spacing-base-vert*2;
+}
+
+.image-onboarding-big {
+  @extend .image-onboarding;
+
+  height: $onboarding-image-height + 50px;
+  width: $onboarding-image-height + 50px;
+}
+
+.image-start {
+  @extend .image-onboarding-slider;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/start.svg);
+}
+
+.image-bank {
+  @extend .image-onboarding-slider;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/bank.svg);
+}
+
+.image-tuv {
+  @extend .image-onboarding-slider;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/tuv.svg);
+}
+
+.image-lock {
+  @extend .image-onboarding-big;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/lock.svg);
+}
+
+.image-lock.remove {
+  animation: hideLock 0.5s forwards;
+}
+
+.image-login {
+  @extend .image-onboarding;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/login.svg);
+}
+
+.image-success {
+  @extend .image-onboarding-big;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/finish.svg);
+}
+
+.image-shocked {
+  @extend .image;
+
+  background-position-y: 9px;
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/shocked.svg);
+}
+
+.image-kiss {
+  @extend .image;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/kiss.svg);
+}
+
+.image-sad {
+  @extend .image;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/sad.svg);
+}
+
+.image-hero {
+  @extend .image;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/hero.svg);
+}
+
+.image-loading {
+  @extend .image-onboarding;
+
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/loading.svg);
+}
+
+.image-hero-loading {
+  @extend .image;
+
+  height: 80px;
+  width: 80px;
+  margin: auto;
+  background-image: url(//cdn.contractsafe.fino.digital/#{$image-source}/images/hero-loading.svg);
+}
+

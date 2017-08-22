@@ -1,0 +1,37 @@
+<a 
+    class="hide-link"
+    [routerLink]="routerLink">
+    <card>
+        <div 
+            class="contracting-card padding-base flex-center-row "
+            card-content
+            touchEffect>
+            <!--<span 
+                class="completed-badge text-small padding-hor-half padding-vert-quarter"
+                *ngIf="contract.completed < 100">
+                {{ contract.completed + '%' }}
+            </span>-->
+            <div class="image-small-container">
+                <logo [partner]="contract"></logo>
+            </div>
+            <div class="flex-favorite-child-no-overflow margin-left-base">
+                <div>{{ contract.name }}</div>
+                <!-- TODO Add when categorization working -->
+                <!--<span class="text-decent">{{ contract.category }}</span>-->
+            </div>
+            <div class="margin-hor-base">
+                <div>
+                    Ø
+                    <span>{{ contract.product.amount * -1 | localize:'currency' }}</span>
+                </div>
+                <span 
+                  class="text-decent">
+                  {{ 'intervals.' + contract.duration.interval | translate  }}
+                </span>
+            </div>
+            <div class="flex-center">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+    </card>
+</a>

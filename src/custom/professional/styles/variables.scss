@@ -1,0 +1,26 @@
+// Colors
+$primary-color: #5685D7;
+$accent-color: #7189B6;
+$accent-contrast-color: #F3F8FF;
+$mat-primary-color: linear-gradient(180deg, #6A85B6 0%, #8FD3F4 100%);
+
+// Image source root
+$image-source: 'professional';
+
+// Font
+$font-weight-bold: normal;
+$font-weight-normal: 200;
+
+// Header
+$state-header-background: linear-gradient(180deg, #6A85B6 0%, #8FD3F4 100%);
+$state-summary-background: transparent;
+$state-header-bottom-radius: 4px;
+$state-header-icon-color: #fff;
+$state-header-color: #fff;
+$state-summary-color: #fff;
+$state-summary-icon-border-width: 0;
+
+// Hero
+$hero-display: none;
+
+@import '../../../app/styles/variables';

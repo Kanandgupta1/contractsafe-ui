@@ -1,0 +1,15 @@
+<div class="fill-horizontal add-contract-component">
+  <state-header 
+    header="header.addContract"
+    [left]="'/app/list'">
+    <hero-board
+      summary-content
+      [text]="'addContractView.title' | translate">
+    </hero-board>
+  </state-header>
+
+  <add-contract-view
+    (contractSubmit)="addContract($event)"
+    [addBusy]="saveBusy">
+  </add-contract-view>
+</div>

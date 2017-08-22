@@ -1,0 +1,15 @@
+<div 
+  class="pdf-viewer-component"
+  [ngClass]="{
+    'scroll-vertical' : !isThumbnail
+  }"
+  (pinchin)="zoomIn()"
+  (pinchout)="zoomOut()">
+  <pdf-viewer 
+    [src]="pdfData" 
+    [original-size]="false"
+    [show-all]="!isThumbnail"
+    [zoom]="zoom"
+    style="display: block;">
+  </pdf-viewer>
+</div>

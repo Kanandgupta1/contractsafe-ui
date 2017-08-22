@@ -1,0 +1,74 @@
+<div class="documents-viewer-component padding-base">
+  <div 
+    *ngFor="let document of documents"
+    class="documents-container padding-half">
+    <slide-in-container 
+      (sliddenIn)="document.sliddenIn = true">
+      <card [noOverflow]="true">
+        <div
+          card-content
+          class="documents-content"
+          (click)="openViewer(document)"
+          touchEffect>
+          <document-viewer 
+            [delayLoading]="!document.sliddenIn"
+            [document]="document"
+            [isThumbnail]="true"
+            (removeDocument)="removeDocument($event)">
+          </document-viewer>
+        </div>
+      </card>
+    </slide-in-container>
+  </div>
+
+  <div class="icon-container padding-base">
+    <!--<input type="file" ng2FileSelect [uploader]="uploader" />-->
+    <label 
+      for="upload"
+      class="margin-right-half">
+      <input 
+        id="upload"
+        [hidden]="true"
+        type="file" 
+        (change)="handleUpload($event)"
+        [accept]="acceptedUploadTypes"
+        multiple />
+      <action-icon 
+        [dontCaptureClick]="true"
+        [border]="true" 
+        [circle]="true" 
+        iconClass="fa-upload">
+      </action-icon>
+    </label>
+    <!--<action-icon 
+      [border]="true" 
+      [circle]="true" 
+      iconClass="fa-camera" 
+      (click)="takeSnapshot()">
+    </action-icon>-->
+  </div>
+
+  <fullscreen-dialog 
+    [(dialogOpened)]="dialogOpened"
+    [(dialog)]="viewerDialog">
+    <ng-template #dialogContentTemplate>
+      <document-viewer 
+        [delayLoading]="!dialogOpened"
+        [document]="selectedDocument"
+        (removeDocument)="removeDocument($event)">
+      </document-viewer>
+    </ng-template>
+  </fullscreen-dialog>
+
+  <fullscreen-dialog [(dialog)]="dialog">
+    <ng-template #dialogContentTemplate>
+      <webcam 
+        [width]="dialogRef.config.width"
+        [height]="dialogRef.config.height"
+        (attached)="webcamAttached($event)"
+        (errored)="webcamError($event)"
+        (snap)="snap($event)"
+      ></webcam>
+    </ng-template>
+  </fullscreen-dialog>
+</div>

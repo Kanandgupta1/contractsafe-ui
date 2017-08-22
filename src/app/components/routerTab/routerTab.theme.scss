@@ -1,0 +1,8 @@
+.router-tab-component {
+  background-color: $color-gray-lighter;
+
+  a.is-active {
+    color: $text-color-lighter;
+    background-color: $accent-color;
+  }
+}

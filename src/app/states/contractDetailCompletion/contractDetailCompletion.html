@@ -1,0 +1,15 @@
+<div class="fill-horizontal contract-detail-completion-component">
+  <state-header 
+    header="contractDetailCompletion.title"
+    left="/app/list">
+    <hero-board
+      summary-content
+      [text]="'contractDetailCompletion.hero' | translate">
+    </hero-board>
+  </state-header>
+  
+  <contract-detail-completion-view
+    [contracts]="contracts"
+    (contractUpdated)="updateContract($event)">
+  </contract-detail-completion-view>
+</div>

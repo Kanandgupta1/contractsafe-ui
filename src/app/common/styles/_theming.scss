@@ -1,0 +1,11 @@
+app {
+  .hero-container {
+    &:not(.spacing-when-empty) {
+      display: $hero-display;
+    }
+
+    &.spacing-when-empty > hero {
+      display: $hero-display;
+    }
+  }
+}

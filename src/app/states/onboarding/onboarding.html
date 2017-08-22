@@ -1,0 +1,41 @@
+<form 
+  class="onboarding-container fill-vertical fill-horizontal flex-parent text-centered"
+  role="form"
+  novalidate
+  [formGroup]="onboardingForm"
+  (ngSubmit)="cta($event)">
+  <state-header 
+    *ngIf="userExists"
+    right="/"
+    rightIcon="fa-times">
+  </state-header>
+  <div 
+    class="flex-favorite-child relative-container"
+    [ngClass]="{
+      'action-container': !hideCta()
+    }">
+    <div 
+      class="content-container"
+      [ngClass]="{
+        'position-fill-absolute': hideCta()
+      }">
+      <div 
+        class="inner"
+        [ngClass]="{
+          'flex-center-column' : centerState,
+          'fill-vertical': hideCta()
+        }">
+        <dynamic-component [options]="config.options" [component]="component"></dynamic-component>
+      </div>
+    </div>
+    <div 
+      class="btn-container padding-vert-base"
+      *ngIf="!hideCta()">
+      <action-button 
+        type="submit"
+        [disabled]="cannotCta">
+        {{ 'onboarding.cta.' + ctaText | translate }}
+      </action-button>
+    </div>
+  </div>
+</form>

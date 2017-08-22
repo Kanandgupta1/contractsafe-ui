@@ -1,0 +1,12 @@
+.router-tab-component {
+  border-radius: 50px;
+  overflow: hidden;
+
+  a.is-active {
+    border-radius: 50px;
+  }
+
+  a:not(.is-active):hover {
+    cursor: pointer;
+  }
+}

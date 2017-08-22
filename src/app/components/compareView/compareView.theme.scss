@@ -1,0 +1,88 @@
+$value-font-size: $font-size-title ;
+$compare-value-font-size: $font-size-main-body;
+$compare-symbol-size: 70px;
+$compare-symbol-border-width: 3px;
+$compare-symbol-animation-start: -$compare-symbol-size - 20px;
+
+@keyframes toLeft {
+  0% {
+    left: $compare-symbol-animation-start;
+  }
+  100% {
+    left: 20px;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    right: $compare-symbol-animation-start;
+  }
+  100% {
+    right: 20px;
+  }
+}
+
+.compare-view-component {
+  .compare-symbol {
+    background-color: $accent-contrast-color;
+  }
+
+  &.more {
+    .value-container {
+      color: $brand-danger;
+    }
+
+    .compare-symbol-container {
+      right: $compare-symbol-animation-start;
+      animation: toRight 0.5s forwards ease-out;
+      animation-delay: 0.3s;
+    }
+
+    .compare-symbol {
+      border-width: $compare-symbol-border-width;
+      border-color: $brand-danger;
+      //@include symbol($compare-symbol-size, #fff, $compare-symbol-border-width, $brand-danger);
+    }
+
+    .compare-line {
+      background-color: $brand-danger;
+    }
+  }
+
+  &.less {
+    .value-container {
+      color: $accent-color;
+    }
+
+    .compare-symbol-container {
+      left: $compare-symbol-animation-start;
+      animation: toLeft 0.5s forwards ease-out;
+      animation-delay: 0.3s;
+    }
+
+    .compare-symbol {
+      border-width: $compare-symbol-border-width;
+      border-color: $accent-color;
+      //@include symbol($compare-symbol-size, #fff, $compare-symbol-border-width, $accent-color);
+    }
+
+    .compare-line {
+      background-color: $accent-color;
+    }
+  }
+
+  .value-container {
+    font-size: $value-font-size;
+    line-height: $value-font-size;
+  }
+
+  .compare-container {
+    font-size: $compare-value-font-size;
+    line-height: $compare-value-font-size;
+  }
+
+  .compare-line {
+    position: relative;
+    height: $border-width-standard;
+  }
+}

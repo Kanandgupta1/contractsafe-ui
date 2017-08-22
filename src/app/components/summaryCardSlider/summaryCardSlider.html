@@ -1,0 +1,12 @@
+<div class="summary-card-slider-component">
+  <swiper [config]="swipeOptions">
+    <div class="swiper-wrapper">  
+      <div class="swiper-slide" *ngFor="let summary of summaries">
+      <div class="padding-top-base padding-hor-base">
+        <summary-card [summary]="summary"></summary-card>
+      </div>
+      </div>
+    </div>
+  </swiper>
+  <div class="slider-bullets margin-top-half"></div>
+</div>

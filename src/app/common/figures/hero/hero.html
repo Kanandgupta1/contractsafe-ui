@@ -1,0 +1,14 @@
+<div 
+  class="hero"
+  [ngClass]="{
+    'small': small
+  }">
+	<div 
+		*ngIf="!hasEmotion"
+		class="image-hero">
+	</div>
+	<div 
+		*ngIf="emotion === 'shocked'"
+		class="image-shocked">
+	</div>
+</div>

@@ -1,0 +1,61 @@
+@import '~@fino/ng2-styles/themes/tresi';
+@import 'variables';
+@import 'modules';
+
+html {
+  font-size: 14px;
+  height: 100%;
+  max-height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: 1rem;
+  font-weight: $font-weight-normal;
+  color: $color-body;
+  background-color: $bg-color;
+  height: 100%;
+  max-height: 100%;
+}
+
+body {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-callout: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.app {
+  background-color: $bg-color;
+  display: block;
+  min-height: 100vh;
+  position: relative;
+}
+
+.app.role-guest {
+  padding-top: 0;
+}
+
+// App component styles
+//  will automatically be injected
+// ------------------------------------
+// inject:app.scss
+@import '../common/styles/_badge.scss';
+@import '../common/styles/_hexagon.scss';
+@import '../common/styles/_icons.scss';
+@import '../common/styles/_images.scss';
+@import '../common/styles/_list.scss';
+@import '../common/styles/_notification.scss';
+@import '../common/styles/_numbered.scss';
+@import '../common/styles/_onboarding.scss';
+@import '../common/styles/_spinner.scss';
+@import '../common/styles/_tables.scss';
+@import '../common/styles/_theming.scss';
+// endinject:app.scss

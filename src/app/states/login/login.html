@@ -1,0 +1,21 @@
+<form 
+  class="fill-horizontal fill-vertical flex-center"
+  [formGroup]="loginForm" 
+  (ngSubmit)="login($event)">
+  <div class="fill-vertical flex-center">
+    <login-form [(loginBusy)]="loginBusy" [(model)]="loginModel" [(form)]="loginForm">
+      <div class="inner-box">
+        <p class="margin-top-none text-title">{{ 'login.state.title' | translate }}</p>
+        <p class="text-description">{{ 'login.description' | translate }}</p>
+        <div class="image image-login margin-top-double"></div>
+      </div>
+    </login-form>
+  </div>
+
+  <confirm-dialog 
+    name="improvedRecognization"
+    [choices]="['onboarding']"
+    [(isOpen)]="dialogOpen"
+    (confirm)="improvedRecognization($event)">
+  </confirm-dialog>
+</form>  

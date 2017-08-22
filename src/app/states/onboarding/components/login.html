@@ -1,0 +1,38 @@
+<div class="fill-vertical">
+  <div class="padding-top-double padding-bottom-base">
+     <img class="circle bank-icon" [src]="options.parent.selectedBank.loginIcon"> 
+    <!-- <state-header>
+      <div summary-icon>
+        <img class="circle bank-icon" [src]="options.parent.selectedBank.loginIcon">
+      </div>
+      <div 
+        class="login-title padding-bottom-half"
+        summary-content>
+        <h3 class="margin-none">{{ 'onboarding.login.title' | translate:{name: options.parent.selectedBank.shortName || ''} }}</h3>
+      </div>
+    </state-header> -->
+  </div>
+  <login-form 
+    [bankMetadata]="options.parent.selectedBank.bankMeta"
+    [credentials]="options.parent.selectedBank.credentials"
+    [hideButton]="true" 
+    [(model)]="options.parent.loginModel"
+    [(form)]="options.parent.onboardingForm"
+    [(hasError)]="options.parent.loginError">
+    <div class="inner-box">
+       <p class="text-title">
+        {{ 'onboarding.login.title' | translate:{name: options.parent.selectedBank.shortName || ''} }}
+      </p> 
+      <p class="text-description">{{ 'onboarding.login.description' | translate }}</p>
+    </div>
+  </login-form>
+  <div 
+    *ngIf="showCheckbox"
+    class="padding-hor-double padding-bottom-base">
+    <md-checkbox 
+      [(ngModel)]="options.parent.checkAgb"
+      required>
+      <span [innerHTML]="'onboarding.login.agb' | translate"></span>
+    </md-checkbox>
+  </div>
+</div>

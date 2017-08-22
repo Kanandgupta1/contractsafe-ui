@@ -1,0 +1,31 @@
+<div class="flex-center-column fill-vertical">
+  <p class="text-title inner-box">
+    {{ 'onboarding.login.desktop' | translate }}
+  </p>
+  <login-card
+    [hideCta]="true"
+    [(model)]="options.parent.loginModel"
+    [(form)]="options.parent.onboardingForm">
+    <div login-header>
+      HEADER
+    </div>  
+    <div login-content>
+      <p class="text-title">
+        {{ options.parent.selectedBank.shortName }}
+      </p>
+    </div>
+    <div login-bottom>
+      <div class="padding-hor-quarter">
+        <md-checkbox 
+          [(ngModel)]="options.parent.checkAgb"
+          required>
+          <span [innerHTML]="'onboarding.login.agb' | translate"></span>
+        </md-checkbox>
+      </div>
+    </div>  
+  </login-card>
+  <p class="margin-top-base inner-box">
+    {{ 'onboarding.login.description' | translate }}
+    {{ 'login.info' | translate }}
+  </p>
+</div>

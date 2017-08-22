@@ -1,0 +1,8 @@
+<div class="contract-summary-component flex-center-complete-row text-centered">
+  <div
+    class="flex-favorite-child padding-hor-half"
+    *ngFor="let summaryItem of summaryItems">
+    <div class="text-bold">{{ summaryItem.value | localize:getPipeType(summaryItem) }}</div>
+    <div class="text-small">{{ 'contractSummary.' + summaryItem.type | translate }}</div>
+  </div>
+</div>

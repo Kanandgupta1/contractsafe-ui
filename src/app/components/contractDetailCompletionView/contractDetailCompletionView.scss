@@ -1,0 +1,11 @@
+.contract-detail-completion-view-component {
+  .contract-detail {
+    position: absolute;
+    width: 100%;
+  }
+
+  .contract-detail-shown,
+  .contract-detail-container {
+    position: relative;
+  }
+}

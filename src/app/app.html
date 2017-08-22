@@ -1,0 +1,8 @@
+<pull-to-refresh (pull)="pull($event)">
+  
+  <div 
+    class="fill-vertical"
+    [ngClass]="'browser-' + device.browser">
+    <router-outlet></router-outlet>
+  </div>
+</pull-to-refresh>

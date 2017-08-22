@@ -1,0 +1,48 @@
+.simple-notification-wrapper {
+  &.right {
+    right: -4px;
+  }
+
+  .simple-notification {
+    border-radius: $border-radius-base;
+    border: $border-standard;
+    background-color: #fff !important;
+    position: relative;
+    margin-bottom: 0;
+
+    .sn-content {
+      color: $text-color;
+    }
+  }
+
+  .simple-notification.error {
+    cursor: pointer;
+    color: $brand-danger;
+    border: $card-border-error;
+
+    & svg {
+      fill: $brand-danger;
+    }
+  }
+
+  .simple-notification.success {
+    cursor: pointer;
+    color: $brand-success;
+    border: $card-border-success;
+
+    & svg {
+      fill: $brand-success;
+    }
+  }
+
+  .simple-notification.error .sn-progress-loader span {
+    background-color: darken($brand-danger, 25%);
+  }
+}
+
+simple-notification {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}

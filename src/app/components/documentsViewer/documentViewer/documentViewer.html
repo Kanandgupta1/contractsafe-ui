@@ -1,0 +1,47 @@
+<!-- TODO Progressive image loading 
+  https://jmperezperez.com/medium-image-progressive-loading-placeholder/ -->
+<div 
+  (press)="enterDeleteMode($event)"
+  class="document-viewer-component fill-vertical max-fill-vertical">
+  <div 
+    class="fill-horizontal flex-center padding-base"
+    *ngIf="document.loading">
+    <md-progress-spinner 
+        class="margin-right-quarter" 
+        mode="indeterminate">
+    </md-progress-spinner>
+  </div>
+  <div 
+    class="fill-vertical"
+    [ngClass]="{
+      'fill-horizontal': !isThumbnail
+    }"
+    *ngIf="!document.loading && !delayLoading">
+    <image-url-viewer 
+      *ngIf="isImage"
+      [document]="document">
+    </image-url-viewer>
+    <pdf-url-viewer 
+      *ngIf="isPdf"
+      [document]="document"
+      [isThumbnail]="isThumbnail">
+    </pdf-url-viewer>
+  </div>
+
+  <!-- thumbnail delete icon -->
+  <div 
+    [touchEffectNoDelay]="true"
+    touchEffect="none"
+    *ngIf="!isThumbnail || deleteMode"
+    (click)="exitDeleteMode($event)"
+    [ngClass]="{
+      'overlay' : isThumbnail,
+      'icon-container padding-half' : !isThumbnail
+    }">
+    <action-icon
+      [circle]="true"
+      iconClass="fa-trash"
+      (click)="delete($event)">
+    </action-icon>
+  </div>
+</div>

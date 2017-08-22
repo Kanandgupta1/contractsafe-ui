@@ -1,0 +1,29 @@
+<div class="summary-card-component padding-base padding-vert-half">
+
+  <div class="symbol-container">
+    <div 
+      [hidden]="hideIcon"
+      class="symbol circle">
+      <i 
+        *ngIf="icon"
+        class="fa-small" 
+        [ngClass]="icon">
+      </i>
+      <ng-content select=[summary-symbol]></ng-content>
+    </div>
+  </div>
+
+  <div class="padding-half text-centered">
+    <div 
+      *ngIf="summary.name"
+      class="text-important">{{ plainName ? summary.name : ('summary.' + summary.name | translate) }}
+    </div>
+    <ng-content></ng-content>
+  </div>
+  <hr class="margin-hor-base margin-vert-half">
+  <contract-summary [summaryItems]="summary.summary"></contract-summary>
+
+  <div class="icon-container padding-half">
+    <ng-content select=[summary-icons]></ng-content>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div 
+  #scrollContainer
+  class="pull-to-refresh-component fill-vertical scroll-vertical">
+  <div style="position:fixed; z-index: 1000000; top: 0; width: calc(100% - 120px); left: 60px;">
+    <card-swiper 
+      [parallax]="true"
+      (swipeToRight)="pull.emit($event)" 
+      direction="vertical">
+      <div swiper-fix style="height: 20px;"></div>
+      <div
+        parallax-element
+        class="flex-center fill-vertical">
+        <div 
+          class="swiper-circle circle">
+          <md-progress-spinner mode="indeterminate"></md-progress-spinner>
+        </div>
+      </div>
+    </card-swiper>
+  </div>
+  <div class="minimum-fill-vertical ptr-container">
+    <ng-content></ng-content>
+  </div>
+</div>

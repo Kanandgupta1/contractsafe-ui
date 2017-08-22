@@ -1,0 +1,8 @@
+ui:
+    tty: true
+    environment:
+        - "ENVIRONMENT=${ENVIRONMENT}"
+        - "BUILD=${BUILD}"
+    expose:
+        - "80"
+    image: dockerhub.fino.digital/fino/contractsafe-ui:${VERSION}

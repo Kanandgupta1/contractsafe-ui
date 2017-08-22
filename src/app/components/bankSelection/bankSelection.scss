@@ -1,0 +1,19 @@
+.bank-selection {
+  position: relative;
+
+  .input-suffix-text {
+    line-height: 40px;
+  }
+}
+
+.bank-selection-search-container {
+  position: absolute;
+  overflow: hidden;
+}
+
+.bank-selection-search {
+  .fa-caret-right {
+    font-size: 1.5rem;
+    line-height: 40px;
+  }
+}

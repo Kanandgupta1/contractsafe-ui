@@ -1,0 +1,80 @@
+<div class="list-container padding-top-base"> 
+  <div class="hero-container">  
+    <slide-in-container>
+      <hero></hero>
+    </slide-in-container>
+  </div>
+  <div class="inner-box">
+    <p class="margin-top-none text-title">
+      {{ 'onboarding.list' + translationKey  + '.title' | translate:{ count: options.parent.visibleContracts && options.parent.visibleContracts.length || 0 } }}
+    </p>
+    <p 
+      class="text-description"
+      [innerHTML]="'onboarding.list' + translationKey  + '.description' | translate">
+    </p>
+  </div>
+  <div class="table-container padding-hor-half margin-bottom-half">
+    <table *ngIf="contracts.length">
+      <tbody>
+        <tr 
+          class="padding-half"
+          *ngFor="let c of contracts; let i = index;"
+          [ngClass]="{
+            'bordered-row': c.last && i < contracts.length - 1
+          }">
+          <td 
+            class="padding-half">
+            <logo 
+              *ngIf="!c.multiple"
+              [partner]="c">
+            </logo>
+          </td>
+          <td 
+            class="padding-hor-half"
+            [ngClass]="{
+              'text-bold padding-vert-half': !c.multiple,
+              'padding-vert-quarter': c.multiple
+            }">
+            {{ c.name }}
+            <div 
+              *ngIf="c.header"
+              class="list-subtitle">
+              {{ 'list.multiple' | translate }}
+            </div>
+            <div 
+              *ngIf="c.multiple"
+              class="text-decent">
+              <div 
+                *ngIf="contractHasTransactions(c)">
+                {{ 'list.bookingDate' | translate:{ date: (fetchLastBookingDate(c) | localize:'date') } }}
+              </div>
+              <div>
+                {{ 'list.amount' | translate:{ amount: (c.product.amount | localize:'currency') } }}
+                <span *ngIf="contractHasTransactions(c)">
+                  {{ 'list.bookings' | pluralize:c.transactions.length | translate:{ amount: c.transactions.length } }}
+                </span>
+              </div>
+            </div>
+          </td>
+          <!-- TODO Add when intervals working -->
+          <!--<td class="padding-hor-half">
+            <booking-entry [booking]="cp"></booking-entry>
+          </td>-->
+          <td 
+            class="padding-hor-half">
+            <checkbox 
+              *ngIf="!c.header"
+              [(checked)]="c.selected">
+            </checkbox>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div
+      *ngIf="!contracts.length"
+      class="text-centered text-important inner-box padding-double">
+      {{  'onboarding.list.empty' | translate }}
+    </div>
+  </div>
+</div>

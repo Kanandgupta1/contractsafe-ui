@@ -1,0 +1,33 @@
+<empty-container
+  key="contractDetailCompletion"
+  [isEmpty]="!hasContracts">
+  <ng-template #contentTemplate>
+    <div class="contract-detail-completion-view-component padding-base">
+      <div class="contract-detail-container">
+        <div
+          class="contract-detail"
+          *ngFor="let contractDetail of visibleDetails; let i = index; trackBy: trackByContractDetail"
+          [ngClass]="{
+            'contract-detail-shown': i === previewStates.length - 1 || i === visibleDetails.length - 1
+          }"
+          [@previewState]="contractDetail.previewState">
+          <slide-in-container>
+            <contract-detail-card
+              [contract]="contractDetail.contract"
+              [detail]="contractDetail.detail"
+              (detailChange)="contractUpdated.emit($event)"
+              (detailSave)="contractUpdated.emit($event)">
+            </contract-detail-card>
+          </slide-in-container>
+        </div>
+      </div>
+
+      <div 
+        *ngIf="hasContracts"
+        class="big-font text-centered">
+          {{ total }}
+      </div>
+      <div class="text-centered">{{ 'contractDetailCompletion.left' | pluralize:total | translate }}</div>
+    </div>
+  </ng-template>
+</empty-container>

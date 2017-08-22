@@ -1,0 +1,13 @@
+.detail-component {
+  .circle {
+    border: 2px solid $accent-color;
+  }
+
+  .text-title {
+    color: $accent-contrast-color;
+  }
+
+  .title-container {
+    padding-top: $spacing-base-vert*1.5;
+  }
+}

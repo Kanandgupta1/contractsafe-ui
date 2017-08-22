@@ -1,0 +1,22 @@
+FROM node:latest
+ARG BUILD
+
+RUN apt-get update && apt-get install git -y
+
+RUN mkdir /app
+
+ADD . /app/
+
+WORKDIR /app/
+
+RUN npm install -g gulp
+
+RUN npm set progress=false && npm config set unsafe-perm true && npm config set @fino:registry http://nexus.westeurope.cloudapp.azure.com:8080/repository/npm-hosted/ && echo "//nexus.westeurope.cloudapp.azure.com:8080/repository/npm-hosted/:_authToken=34d693d4-53dd-3d96-a3fc-42d312b483f2" >> ~/.npmrc
+
+RUN npm install
+
+COPY gulpfile.babel.js .babelrc /app/
+COPY src /app/src
+COPY gulp /app/gulp
+
+RUN npm run build

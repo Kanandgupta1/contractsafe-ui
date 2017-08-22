@@ -1,0 +1,14 @@
+<div 
+  (click)="checked = !checked"
+  [ngClass]="{
+    'checked' : checked
+  }"
+  class="checkbox">
+  <div class="border-box"></div>
+  <input
+    type="checkbox"
+    [name]="name"
+    [hidden]="true"
+    [ngModel]="checked">
+  <i class="fa fa-check check"></i>
+</div>

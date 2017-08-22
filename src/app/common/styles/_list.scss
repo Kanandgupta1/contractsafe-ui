@@ -1,0 +1,18 @@
+ol.circle-list {
+  list-style: none;
+  margin: $spacing-base-vert 0;
+  padding: 0;
+
+  .list-item {
+    margin-bottom: 5px;
+  }
+
+  .circle {
+    align-self: flex-start;
+    font-size: 14px;
+    font-style: normal;
+    min-height: 23px;
+    min-width: 23px;
+    margin-right: 10px;
+  }
+}

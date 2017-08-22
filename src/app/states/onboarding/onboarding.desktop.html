@@ -1,0 +1,67 @@
+<form 
+  class="fill-vertical fill-horizontal flex-center text-centered"
+  role="form"
+  novalidate
+  [formGroup]="onboardingForm"
+  (ngSubmit)="cta($event)">
+  <card>
+    <div class="onboarding-desktop-container" card-content>
+      <div class="onboarding-header flex-parent-row">
+        <div 
+          class="padding-hor-base padding-vert-half"
+          (click)="prev()"
+          touchEffect>
+          <i class="fa-inverted fa-chevron-left"></i>
+          <span>{{ 'onboarding.back' | translate }}</span>
+        </div>
+        <div class="padding-hor-base padding-vert-half">
+          <i class="fa-inverted fa-lock"></i>
+          <span>{{ 'onboarding.secure' | translate }}</span>
+        </div>
+      </div>  
+      <!--<div class="onboarding-content padding-base">
+        <dynamic-component [options]="config.options" [component]="component"></dynamic-component>
+      </div>  
+      <div 
+        class="btn-container"
+        *ngIf="!hideCta()">
+        <action-button 
+          [busy]="ctaBusy"
+          type="submit"
+          [disabled]="cannotCta">
+          {{ 'onboarding.cta.' + state | translate }}
+        </action-button>
+      </div>-->
+    <div 
+    class="onboarding-content flex-favorite-child max-fill-vertical"
+    [ngClass]="{
+      'action-container': !hideCta()
+    }">
+    <div 
+      class="content-container"
+      [ngClass]="{
+        'fill-vertical': hideCta()
+      }">
+      <div 
+        class="inner padding-base"
+        [ngClass]="{
+          'flex-center-column' : centerState,
+          'fill-vertical': hideCta()
+        }">
+        <dynamic-component [options]="config.options" [component]="component"></dynamic-component>
+      </div>
+    </div>
+    <div 
+      class="btn-container"
+      *ngIf="!hideCta()">
+      <action-button 
+        [busy]="ctaBusy"
+        type="submit"
+        [disabled]="cannotCta">
+        {{ 'onboarding.cta.' + state | translate }}
+      </action-button>
+    </div>
+      </div>
+    </div>
+  </card>
+</form>

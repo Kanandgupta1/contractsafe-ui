@@ -1,0 +1,11 @@
+:host(.break-out) .divider-component {
+  margin-left: -$spacing-base-hor;
+  margin-right: -$spacing-base-hor;
+}
+
+.divider-component {
+  .seperator {
+    min-width: $spacing-base-hor;
+    height: $border-width-standard;
+  }
+}

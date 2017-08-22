@@ -1,0 +1,103 @@
+<div class="list-component text-centered fill-horizontal scroll-container">
+  <state-header 
+    header="header.list"
+    left="/app/settings"
+    leftIcon="fa-cog">
+    <hero-board
+      summary-content
+      [text]="(heroEmotion ? 'list.summary.' + heroEmotion : ('list.summary.default' | pluralize:contracts.length)) | translate:{count: contracts.length, costs: summedCosts}"
+      [heroEmotion]="heroEmotion">
+    </hero-board>
+     <a 
+      *ngIf="detailsIncompleteCount"
+      summary-right
+      class="hide-link"
+      routerLink="/app/contractDetailCompletion">
+      <action-icon
+        iconClass="fa-state-header fa-main fa-bell">
+        <span class="circle notification">{{ detailsIncompleteCount }}</span>
+      </action-icon>
+    </a>
+    <!--<div 
+      class="padding-hor-base"
+      summary-detail>
+      <md-input
+        class="margin-none input-accent-contrast"
+        placeholder="Suche"
+        [(ngModel)]="search"
+        type="search">
+      </md-input>
+    </div>-->
+  </state-header>
+
+  <div class="scroll-content">
+    <div class="container padding-vert-half">
+      <div
+        *ngFor="let contractGroup of contractGroups; trackBy: trackByFn;">
+        <div *ngIf="contractGroup.contracts.length">
+          <divider 
+            [breakOut]="true"
+            [text]="'list.title.' + contractGroup.title">
+          </divider>
+          <div 
+            *ngFor="let contract of contractGroup.contracts | listFilter:detailContext.search | listSort:detailContext.sort; trackBy: trackByFn;">
+            <div 
+              class="margin-vert-half clickable"
+              *ngIf="!contract.deleted">
+              <card-swiper 
+                text="deleteCard" 
+                (iconClick)="delete(contract)"
+                (swipeToLeft)="contract.markedToDelete = true"
+                (swipeToRight)="contract.markedToDelete = false"
+                [capture]="contract.markedToDelete"
+                [parallax]="true">
+                <div parallax-content>
+                  <slide-in-container>
+                    <contracting-card [contract]="contract">
+                    </contracting-card>
+                  </slide-in-container>
+                </div>
+                <div 
+                  class="swiper-icon fill-vertical"
+                  parallax-element>
+                  <action-icon
+                    (click)="delete(contract)"
+                    iconClass="fa-primary-contrast fa-main fa-trash"
+                    [busy]="deleteBusy">
+                  </action-icon>
+                </div>
+              </card-swiper>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="icon-container padding-base">
+    <action-icon 
+      [border]="true" 
+      [circle]="true" 
+      iconClass="fa-plus" 
+      (click)="openAddContractDialog()">
+    </action-icon>
+  </div>
+
+  <fullscreen-dialog [(dialog)]="addContractViewDialog">
+    <ng-template #dialogContentTemplate>
+      <div class="scroll-vertical flex-parent">
+        <div class="text-title text-centered">
+          {{ 'list.addContract' | translate }}
+        </div>
+        <div class="flex-favorite-child relative-container">
+          <div class="position-fill-absolute">
+            <add-contract-view
+              (contractSubmit)="addContract($event)"
+              [addBusy]="saveBusy">
+            </add-contract-view>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </fullscreen-dialog>
+</div>

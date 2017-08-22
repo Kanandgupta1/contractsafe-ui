@@ -1,0 +1,13 @@
+<div class="slider">
+  <swiper [config]="swipeOptions" #swiperElement>
+    <div class="swiper-wrapper">  
+      <div class="swiper-slide" *ngFor="let swipe of swipes">
+        <ng-template 
+          [ngTemplateOutlet]="swipeTemplate"
+          [ngOutletContext]="{ $implicit: swipe }">
+        </ng-template>
+      </div>
+    </div>
+  </swiper>
+  <div class="slider-bullets"></div>
+</div>

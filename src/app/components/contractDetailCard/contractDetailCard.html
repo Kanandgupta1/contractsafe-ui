@@ -1,0 +1,51 @@
+<card-swiper
+  [canSwipeRight]="true"
+  (swipeToLeft)="swipeLeft()"
+  (swipeToRight)="swipeRight($event)">
+  <card>
+  <div 
+    card-content
+    class="contract-detail-card-component padding-top-base padding-hor-base">
+
+    <div class="contract-icon circle">
+      <logo
+        [partner]="contract">
+      </logo>
+    </div>
+
+    <div class="text-centered">
+      <div class="text-title">{{ contract.name }}</div>
+      <div
+        *ngIf="contract.product && contract.product.tariff"
+        class="text-decent">
+        {{ contract.product.tariff }}
+      </div>
+    </div>
+
+    <div class="formular-container padding-half">
+      <div class="text-centered text-bold">{{ 'contractDetailCard.' + detail + detailAppendix | translate }}</div>
+      <formular
+        [formGroups]="contractDetailField"
+        [hideSubmit]="true"
+        [model]="contract"
+        [(formValue)]="formValue">
+      </formular>
+    </div>
+
+    <div class="padding-vert-half button-container">
+      <action-button
+        [decent]="true"
+        [busy]="skipBusy"
+        (click)="skipDetails()">
+        {{ 'form.skip' | translate }}
+      </action-button>
+      <action-button
+        [bold]="true"
+        [busy]="submitBusy"
+        (click)="submitDetails()">
+        {{ 'form.submit' | translate }}
+      </action-button>
+    </div>
+  </div>
+  </card>
+</card-swiper>

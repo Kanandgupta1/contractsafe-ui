@@ -1,0 +1,15 @@
+<div class="fill-horizontal user-component">
+  <state-header 
+    header="settings.user.title"
+    left=".." 
+    leftIcon="fa-chevron-left">
+  </state-header>
+
+  <formular 
+    [flatten]="['user']"
+    [formGroups]="formGroups"
+    (modelChange)="saveUser($event)"
+    [submitBusy]="saveBusy"
+    [model]="user">
+  </formular>
+</div>

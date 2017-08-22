@@ -1,0 +1,63 @@
+<div class="fill-horizontal accounts-component">
+  <state-header 
+    header="settings.accounts.title"
+    left=".." 
+    leftIcon="fa-chevron-left">
+  </state-header>
+
+  <div class="padding-top-base">
+    <div 
+      class="padding-half"
+      *ngFor="let account of accounts">
+
+      <slide-in-container>
+        <card>
+          <div card-content>
+            <summary-card 
+              [summary]="account" 
+              [plainName]="true"
+              [hideIcon]="true">
+              <div class="text-centered">
+                <span class="text-decent">{{ account.iban }}</span>
+              </div>
+              <div summary-icons>
+                <action-icon
+                  [busy]="account.deleteBusy"
+                  [border]="true" 
+                  [circle]="true" 
+                  iconClass="fa-trash" 
+                  (click)="triggerDeleteAccountDialog(account)">
+                </action-icon>
+              </div>
+            </summary-card>
+          </div>
+        </card>
+      </slide-in-container>
+
+    </div>
+  </div>
+
+  <div class="padding-base padding-bottom-double">
+    <a 
+      class="hide-link"
+      [routerLink]="['/app/onboarding/bank']">
+      <card>
+        <div 
+          class="text-centered padding-vert-half"
+          touchEffect
+          card-content>
+          <div><i class="fa-main fa-plus"></i></div>
+          <span>{{ 'settings.accounts.new' | translate }}</span>
+        </div>
+      </card>
+    </a>
+  </div>
+
+  <confirm-dialog 
+    name="deleteBankAccount"
+    [(isOpen)]="dialogOpen"
+    (confirm)="deleteAccount($event)"
+    [choices]="closeChoiceValues">
+    <div class="image image-tresi-small image-sad pull-right"></div>
+  </confirm-dialog>
+</div>

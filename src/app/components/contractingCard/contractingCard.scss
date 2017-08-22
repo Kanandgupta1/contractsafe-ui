@@ -1,0 +1,11 @@
+.contracting-card {
+  position: relative;
+  text-align: left;
+
+  .completed-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+  }
+}

@@ -1,0 +1,26 @@
+<div 
+  class="loading-container flex-center fill-vertical"
+  [ngClass]="{
+    'login-success' : options.parent.loginSuccessful,
+    'search-success' : options.parent.searchSuccessful,
+    'contract-success' : options.parent.contractsFetched
+  }">
+  <div class="image image-loading margin-top-base"></div>
+  <div class="inner-box">
+    <p class="text-title text-centered">
+      {{ 'onboarding.loading.title' | translate:{name: options.parent.selectedBank.shortName || ''} }}
+    </p> 
+    <p class="text-description text-centered">{{ 'onboarding.loading.description' | translate }}</p>
+  </div>
+  <ul class="list-unstyled inner-box">
+    <li 
+      class="margin-vert-quarter text-light"
+      *ngFor="let step of options.steps; let i = index;" 
+      [ngClass]="'loading-step-' + i">
+      <div class="flex-parent-row">
+        <i class="fa fa-check check margin-hor-half"></i>
+        <span class="flex-favorite-child">{{ 'onboarding.loading.' + step | translate }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+$complete-progress-font-size: 12px !default;
+
+.complete-progress-component {
+  padding-bottom: $complete-progress-font-size/2;
+  color: $primary-color;
+
+  .progressbar-text {
+    line-height: ($spacing-base-vert + $complete-progress-font-size) / 2;
+    font-size: $complete-progress-font-size;
+  }
+
+  svg > path:last-of-type {
+    stroke: currentColor;
+  }
+
+  @for $i from 1 through 10 {
+    &.progress-#{$i * 10} {
+      color: mix($accent-color, $primary-color, 10% * $i);
+    }
+  }
+}

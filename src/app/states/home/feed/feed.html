@@ -1,0 +1,37 @@
+<div class="fill-horizontal">
+  <state-header 
+    header="home.title"
+    right="/app/list" 
+    rightIcon="fa-files-o"
+    left="/app/settings" 
+    leftIcon="fa-cog">
+    <hero-board
+      summary-content
+      [text]="'feed.summary' | translate:{count: feed.length}">
+    </hero-board>
+    <!-- TODO Add when catigorization working -->
+    <!-- <div summary-detail>
+      <summary-card-slider [summaries]="categories"></summary-card-slider>
+    </div> -->
+  </state-header>
+  <div class="flex-center padding-vert-half padding-hor-base">
+
+    <slide-in-container
+      class="fill-horizontal margin-vert-half"
+      *ngFor="let item of feed"
+      [slideout]="item.read"
+      (sliddenOut)="remove(item)">
+      <news-feed-card
+        [feedItem]="item"
+        (read)="read($event)"
+        (action)="action($event)">
+      </news-feed-card>
+    </slide-in-container>
+
+    <div
+      *ngIf="!feed.length"
+      class="margin-vert-double text-centered text-important inner-box">
+      {{ 'feed.none' | translate }}
+    </div>
+  </div>
+</div>

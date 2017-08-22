@@ -1,0 +1,11 @@
+<div 
+  class="loading-component flex-parent"
+  [hidden]="!isLoading">
+  <div class="loading-overlay"></div>
+  <div 
+    class="loading-content padding-bottom-double padding-top-base"
+    [@loadingState]="loadingState">
+    <div class="image-hero-loading"></div>  
+    <h4 class="text-centered" [innerHTML]="'loading.title'" translate></h4>
+  </div>
+</div>

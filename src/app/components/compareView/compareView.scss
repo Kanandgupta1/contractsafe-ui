@@ -1,0 +1,15 @@
+.compare-view-component {
+  & > div > .text-light {
+    font-size: 0.8em;
+  }
+
+  .compare-symbol-container {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  .compare-symbol {
+    padding: 10px;
+  }
+}

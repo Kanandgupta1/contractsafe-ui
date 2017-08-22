@@ -1,0 +1,23 @@
+<div 
+  class="compare-view-component text-centered"
+  [ngClass]="compareResult">
+  <div class="value-container">
+    <div>{{ value | localize:unit }}</div>
+    <span 
+      *ngIf="valueText"
+      class="text-decent">
+      {{ valueText | translate }}
+    </span>
+  </div>
+  <div class="compare-line margin-vert-base">
+    <div class="compare-symbol-container">
+      <div class="compare-symbol circle">
+        <span [innerHTML]="'compareView.' + this.compareResult | translate:{ value : this.compareResultValue }"></span>
+      </div>
+    </div>
+  </div>
+  <div class="compare-container text-light">
+    <div>{{ compareValue | localize:unit }}</div>
+    <span class="text-decent">{{ compareText | translate }}</span>
+  </div>
+</div>

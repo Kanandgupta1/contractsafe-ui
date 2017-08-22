@@ -1,0 +1,32 @@
+<div class="login-card-component inner-box">
+  <card>
+    <div 
+      class="padding-base"
+      card-content>
+      <div class="login-header padding-quarter">
+        <ng-content select="[login-header]"></ng-content>
+      </div>
+      <login-form  
+        [hideInfo]="true"
+        [hideButton]="true" 
+        [(model)]="model"
+        [(form)]="form"
+        [(hasError)]="loginError">
+        <div>
+          <ng-content select="[login-content]"></ng-content>
+        </div>
+      </login-form>
+      <ng-content select="[login-bottom]"></ng-content>
+      <div 
+        class="btn-container"
+        *ngIf="!hideCta">
+        <action-button 
+          [busy]="ctaBusy"
+          type="submit"
+          [disabled]="cannotCta">
+          {{ 'login.cta' | translate }}
+        </action-button>
+      </div>
+    </div>
+  </card>
+</div>

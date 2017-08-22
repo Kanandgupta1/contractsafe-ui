@@ -1,0 +1,11 @@
+.settings-component {
+  .overview-component {
+    .setting-route {
+      border-bottom: $border-standard;
+      
+      &.first {
+        border-top: $border-standard;
+      }
+    }
+  }
+}

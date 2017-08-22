@@ -1,0 +1,17 @@
+<div 
+  crawlInputs
+  [@slideState]="slideState"
+  class="bank-container padding-top-double">
+  <div
+    class="image image-lock"
+    [@opacityState]="slideState">
+  </div>
+  <div class="inner-box">
+    <p class="text-title">
+      {{ 'onboarding.bank.title' | translate }}
+    </p>
+    <p class="text-description margin-bottom-double">{{ 'onboarding.bank.description' | translate }}</p>
+
+  <bank-selection (onSearch)="search($event)" (onSelect)="options.parent.selectBank($event)"></bank-selection>
+  </div>
+</div>

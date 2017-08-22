@@ -1,0 +1,515 @@
+{
+  "app": {
+    "title": "Vertragsmanager"
+  },
+  "onboarding": {
+    "back": "Zurück",
+    "secure": "SSL-Secured",
+    "cta": {
+      "start": "Weiter",
+      "startOnboarding": "Jetzt einrichten",
+      "login": "Login",
+      "loading": "Weiter",
+      "success": "Weiter",
+      "list": "Weiter",
+      "listUntagged": "Weiter",
+      "listStandingOrders": "Einrichtung abschließen"
+    },
+    "loading": {
+      "title": "Bitte habe etwas Geduld",
+      "login": "Login wird durchgeführt",
+      "search": "Suche nach Verträgen",
+      "contracts": "Verträge gefunden",
+      "overview": "Übersicht erstellen",
+      "description": "Die automatische Vertragserkennung kann bis zu 45 Sekunden dauern."
+    },
+    "bank": {
+      "title": "Verknüpfung mit Bankkonto",
+      "description": "Wähle die Bank aus, über die deine Verträge abgebucht werden.",
+      "desktop": "Füge deine aktuellen Verträge hinzu"
+    },
+    "login": {
+      "agb": "Ich stimme den <a href=\"#/app/settings/public/agb?from=/app/onboarding/login/\">allgemeinen Geschäftsbedingungen</a> zu.",
+      "title": "Login {{name}}",
+      "description": "Log dich ein, damit deine Verträge automatisch hinzugefügt werden und du sie nicht händisch anlegen musst.",
+      "desktop": "Jetzt sicher bei deiner Bank anmelden"
+    },
+    "success": {
+      "title": "Super!",
+      "description": "Dein Vertragsmanager wurde erfolgreich mit deinem Bankkonto verknüpft."
+    },
+    "list": {
+      "empty": "Leider wurde hier nichts gefunden. Bitte fahre fort.",
+      "title": "Verträge gefunden (1/2)",
+      "description": "Welche Verträge möchtest<br>du übernehmen?",
+      "untagged": {
+        "title": "Verträge gefunden (2/2)",
+        "description": "Sind in der Liste noch Verträge von dir dabei? Wir sind uns nicht sicher und brauchen deine Hilfe."
+      },
+      "standingOrders": {
+        "title": "Daueraufträge",
+        "description": "Wähle aus, welche Daueraufträge du als Vertrag verwalten möchtest."
+      }
+    }
+  },
+  "slider": {
+    "start": {
+      "title": "Dein Vertragsmanager",
+      "description": "Verwalte deine Verträge, verpasse keine Kündigungsfristen und vergleiche was andere ausgeben."
+    },
+    "bank": {
+      "title": "Verknüpfung mit Bankkonto",
+      "description": "Verbinde den Vertragsmanager mit deinem Bankkonto, damit deine Verträge und Ausgaben automatisch erkannt werden."
+    },
+    "tuv": {
+      "title": "Garantierter Datenschutz",
+      "description": "Datenschutz ist uns wichtig: Deine Daten werden verschlüsselt hinterlegt und sind vor unbefugtem Zugriff geschützt."
+    }
+  },
+  "bankSelection": {
+    "search": "Bankname oder BLZ eingeben",
+    "furtherTitle": "+2000",
+    "furtherBody": "weitere Banken"
+  },
+  "login": {
+    "title": "Login Onlinebanking",
+    "state": {
+      "title": "Login"
+    },
+    "description": "Logge dich hier in unser Portal ein, um einen Überblick über deine Verträge zu bekommen.",
+    "username": "Benutzername",
+    "password": "Kennwort",
+    "info": "Deine Daten werden verschlüsselt & geschützt hinterlegt.",
+    "cta": "Konto verknüpfen"
+  },
+  "intervals": {
+    "1": "Monatlich",
+    "4": "Quartalsweise",
+    "6": "Halbjährlich",
+    "12": "Jährlich",
+    "undefined": "Unregelmäßig"
+  },
+  "error": {
+    "cta": "Zurück",
+    "login": {
+      "title": "Fehler beim Login",
+      "content": "Bitte überprüfe dein Anmeldedaten"
+    },
+    "accounts": {
+      "title": "Fehler beim Laden der Konten",
+      "content": "Bitte versuche es erneut."
+    },
+    "bookings": {
+      "title": "Fehler beim Laden",
+      "content": "Bitte versuche es erneut."
+    },
+    "summary": {
+      "title": "Fehler beim Laden",
+      "content": "Bitte versuche es erneut."
+    },
+    "news": {
+      "title": "Fehler beim Laden",
+      "content": "Bitte versuche es erneut."
+    },
+    "contracts": {
+      "title": "Fehler beim Datenabruf",
+      "content": "Bitte versuche es erneut."
+    },
+    "delete": {
+      "title": "Fehler beim Löschen",
+      "content": "Bitte versuche es erneut."
+    },
+    "deleteUser": {
+      "title": "Fehler beim Löschen",
+      "content": "Bitte versuche es erneut."
+    },
+    "deleteAccount": {
+      "title": "Fehler beim Löschen",
+      "content": "Bitte versuche es erneut."
+    },
+    "saveDetails": {
+      "title": "Fehler beim Speichern",
+      "content": "Die eingegebenen Daten konnten nicht gespeichert werden."
+    },
+    "personalInformation": {
+      "title": "Fehler beim Speichern",
+      "content": "Die eingegebenen Daten konnten nicht gespeichert werden."
+    },
+    "addContract": {
+      "title": "Fehler beim Hinzufügen",
+      "content": "Dein Vertrag konnte nicht hinzugefügt werden. Bitte versuche es erneut."
+    },
+    "upload": {
+      "title": "Fehler beim Hochladen",
+      "content": "Die Datei ist wahrscheinlich zu groß."
+    },
+    "page": {
+      "title": "Ups - ein Fehler ist aufgetreten!",
+      "description": "Tritt dieser Fehler häufiger auf? Dann nimm <a href=\"mailto:support@fino.digital\">Kontakt</a> mit uns auf oder schau in den <a href=\"#/app/settings/public/faq/\">Einstellungen unter FAQs.</a>"
+    }
+  },
+  "pending": {
+    "title": "Hier wird bald dein Vertragsmanager für dich zur Verfügung stehen",
+    "poweredby": "Made with ♥ by fino digital GmbH"
+  },
+  "header": {
+    "list": "Deine Verträge",
+    "addContract": "Vertrag hinzufügen"
+  },
+  "buttonGroup": {
+    "name": "Name",
+    "amount": "Betrag",
+    "interval": "Interval",
+    "completed": "Vollständig"
+  },
+  "list": {
+    "addContract": "Vertrag hinzufügen",
+    "sort": "Sortieren",
+    "summary": {
+      "default": {
+        "plural": "Du hast zur Zeit {{count}} Verträge.",
+        "singular": "Du hast zur Zeit einen Vertrag.",
+        "none": "Du hast zur Zeit keine Verträge."
+      },
+      "shocked": "Möchtest du diesen Vertrag wirklich entfernen?"
+    },
+    "title": {
+      "active": "Aktive Verträge",
+      "ended": "Beendete Verträge"
+    },
+    "amount": "Betrag: {{amount}}",
+    "bookings": {
+      "singular": "({{amount}} Buchung)",
+      "plural": "({{amount}} Buchungen)"
+    },
+    "bookingDate": "Letzte Abbuchung: {{date}}",
+    "multiple": "Mehrere mögliche Verträge gefunden"
+  },
+  "formGroup": {
+    "general": "Allgemein",
+    "subheader": {
+      "general": "Allgemeine Informationen zu deinem Vertrag",
+      "addContract": "Bitte ergänze hier alle erforderlichen Vertragsdetails.",
+      "product": "Spezifische Informationen zu deinem Vertrag",
+      "duration": "Zeitangaben zu deinem Vertrag",
+      "contact": "Kontakt-Informationen zu deinem Vertragspartner",
+      "user": "Wir möchten dich kennenlernen",
+      "address": "Wo wohnst du?"
+    },
+    "addContract": "Vertragsdetails ergänzen",
+    "product": "Produkt",
+    "duration": "Laufzeiten und Fristen",
+    "contact": "Kontakt",
+    "user": "Benutzerinformationen",
+    "address": "Adressdaten"
+  },
+  "formControl": {
+    "user": "Benutzername",
+    "password": "Passwort",
+    "customerNumber": "Kundennummer",
+    "amount": "Betrag",
+    "category": "Oberkategorie",
+    "subcategory": "Unterkategorie",
+    "tarif": "Tarif",
+    "status": "Vertragsstatus",
+    "interval": "Buchungsintervall",
+    "noticePeriod": "Kündigungsfrist",
+    "expiration": "Vertragsende",
+    "extend": "Verlängerung um",
+    "cancellationReminder": "Kündigungserinnerung",
+    "hotline": "Service-Hotline",
+    "email": "E-Mail",
+    "portal": "Kundenportal",
+    "suffix": {
+      "monthes": "Monate"
+    },
+    "options": {
+      "yes": "Ja",
+      "no": "Nein",
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "monthly": "Monatlich",
+      "quarterly": "Quartalsweise",
+      "yearly": "Jährlich"
+    },
+    "day": "Tag",
+    "month": "Monat",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "street": "Straße",
+    "houseNumber": "Hausnummer",
+    "postcode": "Postleitzahl",
+    "phone": "Telefonnummer",
+    "city": "Stadt",
+    "error": {
+      "required": "Dieses Feld ist erforderlich.",
+      "year": {
+        "required": "Bitte gib das Jahr ein.",
+        "maxLength": "Eingabe des Jahres ist zu lang."
+      },
+      "month": {
+        "required": "Bitte gib den Monat ein.",
+        "maxLength": "Eingabe des Monats ist zu lang."
+      },
+      "day": {
+        "required": "Bitte gib den Tag ein.",
+        "maxLength": "Eingabe des Tages ist zu lang."
+      },
+      "validateEmail": "Ungültige E-Mail Adresse",
+      "validatePhone": "Ungültige Telefonnummer"
+    },
+    "label": {
+      "end": "Vertragsende"
+    }
+  },
+  "form": {
+    "submit": "Speichern",
+    "skip": "Überspringen"
+  },
+  "stateSummary": {
+    "detail": "Details"
+  },
+  "home": {
+    "title": "Newsfeed"
+  },
+  "contractSummary": {
+    "contracts": "Verträge",
+    "totalCosts": "Gesamtkosten",
+    "costs": "Kosten",
+    "lastMonth": "zum Vormonat",
+    "addedAt": "Verknüpft seit"
+  },
+  "contractDetailCompletion": {
+    "hero": "Hier kannst du deine Vertragsdetails ergänzen",
+    "left": {
+      "plural": "Verträge zu ergänzen",
+      "singular": "Vertrag zu ergänzen",
+      "none": "Verträge zu ergänzen"
+    },
+    "empty": "Du hast alle Vertragsdetails ergänzt. Gut gemacht!",
+    "title": "Ergänze Vertragsdaten"
+  },
+  "contractDetailCard": {
+    "general": {
+      "customerNumber": {
+        "new": "Wie lautet deine Kundennummer?",
+        "confirm": "Stimmt diese Kundennummer?"
+      },
+      "category": {
+        "new": "Zu welcher Kategorie gehört dieser Vertrag?",
+        "confirm": "Stimmt diese Kategorie?"
+      }
+    },
+    "duration": {
+      "interval": {
+        "new": "Wie häufig wird von deinem Konto abgebucht?",
+        "confirm": "Stimmt das Buchungsintervall?"
+      },
+      "extend": {
+        "new": "Wieviele Monate beträgt die Kündigungsfrist?",
+        "confirm": "Stimmt die Kündigungsfrist?"
+      },
+      "expiration": {
+        "new": "Wann endet dieser Vertrag?",
+        "confirm": "Stimmt das Vertragsende?"
+      }
+    }
+  },
+  "routerTab": {
+    "feed": "Neuigkeiten",
+    "bookings": "Buchungen"
+  },
+  "feed": {
+    "none": "Du hast alles abgearbeitet.\nGuck später nochmal rein!",
+    "read": "Gelesen",
+    "summary": "Hey, du hast {{count}} neue Nachrichten.",
+    "description": {
+      "cancellationReminder": "Ablauf der Kündigungsfrist: {{value}} Tage",
+      "completeReminder": "Vertragsdetails zu {{value}}% ausgefüllt"
+    },
+    "action": {
+      "cancellationReminder": "Kündigen",
+      "completeReminder": "Ergänzen"
+    }
+  },
+  "summary": {
+    "communication": "Kommunikation",
+    "insurance": "Versicherungen",
+    "abonnements": "Abonnements",
+    "energy": "Energie"
+  },
+  "month": {
+    "0": "Jan",
+    "1": "Feb",
+    "2": "Mär",
+    "3": "Apr",
+    "4": "Mai",
+    "5": "Jun",
+    "6": "Jul",
+    "7": "Aug",
+    "8": "Sep",
+    "9": "Okt",
+    "10": "Nov",
+    "11": "Dez",
+    "december": "Dezember",
+    "november": "November",
+    "october": "Oktober",
+    "september": "September",
+    "august": "August",
+    "july": "Juli",
+    "june": "Juni",
+    "may": "Mai",
+    "april": "April",
+    "march": "März",
+    "february": "Februar",
+    "january": "Januar",
+    "Dec": "Dezember",
+    "Nov": "November",
+    "Oct": "Oktober",
+    "Sep": "September",
+    "Aug": "August",
+    "Jul": "Juli",
+    "Jun": "Juni",
+    "May": "Mai",
+    "Apr": "April",
+    "Mar": "März",
+    "Feb": "Februar",
+    "Jan": "Januar"
+  },
+  "bookingDropdown": {
+    "count": "{{count}} Buchungen"
+  },
+  "settings": {
+    "accounts": {
+      "title": "Verknüpfte Bankkonten",
+      "new": "Mit neuem Bankkonto verknüpfen"
+    },
+    "user": {
+      "title": "Persönliche Informationen"
+    },
+    "faq": {
+      "title": "FAQ"
+    },
+    "privacy": {
+      "title": "Datenschutz"
+    },
+    "agb": {
+      "title": "AGBs"
+    },
+    "delete": "Account löschen",
+    "overview": {
+      "title": "Einstellungen"
+    },
+    "footer": "Made with ♥ by fino digital GmbH"
+  },
+  "category": {
+    "Kategorie": "Neue Kategorie"
+  },
+  "details": {
+    "bookingHistory": {
+      "title": "Buchungsverlauf"
+    },
+    "incomplete": {
+      "title": "Sparpotenziale sehen",
+      "subtitle": "Ergänze deine Vertragsdetails, damit du künftig Sparpotenziale siehst."
+    }
+  },
+  "compareView": {
+    "more": "{{value}}<br>mehr",
+    "less": "{{value}}<br>weniger",
+    "equal": "Gleich- wertig"
+  },
+  "peerGroup": {
+    "value": "Andere Nutzer",
+    "none": "Peer-Group Vergleich anzeigen",
+    "fill": "(Damit du sehen kannst was andere im Vergleich zu dir ausgeben, ergänze bitte die Unterkategorie in den Details)"
+  },
+  "chart": {
+    "x": [
+      "Jan",
+      "Feb",
+      "Mär",
+      "Apr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Okt",
+      "Nov",
+      "Dez"
+    ]
+  },
+  "loading": {
+    "title": "Bitte habe etwas Geduld."
+  },
+  "success": {
+    "saveDetails": {
+      "title": "Bestätigung",
+      "content": "Deine Daten wurden gespeichert!"
+    },
+    "deleteContract": {
+      "title": "Bestätigung",
+      "content": "Der Vertrag wurde entfernt!"
+    },
+    "personalInformation": {
+      "title": "Bestätigung",
+      "content": "Deine Daten wurden gespeichert!"
+    },
+    "addContract": {
+      "title": "Bestätigung",
+      "content": "Dein Vertrag wurde hinzugefügt!"
+    }
+  },
+  "refresh": {
+    "loading": "Lade die Daten..."
+  },
+  "swiper": {
+    "deleteCard": "Möchtest du diesen Vertrag wirklich entfernen?"
+  },
+  "deleted": {
+    "page": {
+      "title": "Erfolgreich gelöscht",
+      "description": "Dein Account wurde  gelöscht. Schade, dass du uns verlässt."
+    },
+    "cta": "Zum Start"
+  },
+  "dialog": {
+    "improvedRecognization": {
+      "title": "Vertragserkennung optimiert",
+      "content": "Wir haben unsere Vertragserkennung optimiert. Bitte kehre noch einmal zur Vertragsauswahl zurück, um neu erkannte Verträge zu übernehmen."
+    },
+    "deleteBankAccount": {
+      "title": "Konto löschen",
+      "content": "Möchtest du auch alle zu diesem Konto gehörigen Verträge entfernen?"
+    },
+    "deleteAccount": {
+      "title": "Account löschen",
+      "content": "Bist du dir sicher, dass du deinen Account löschen möchtest? Damit werden deine gesamten Daten entfernt."
+    },
+    "deleteContract": {
+      "title": "Vertrag löschen",
+      "content": "Bist du dir sicher, dass du diesen Vertrag entfernen möchtest? Damit gehen die gesamten Vertragsdetails verloren."
+    },
+    "choices": {
+      "ok": "Ok",
+      "removeContracts": "Entfernen",
+      "keepContracts": "Behalten",
+      "onboarding": "Zur Auswahl",
+      "continue": "Übernehmen"
+    },
+    "close": "Abbrechen"
+  },
+  "addContractView": {
+    "title": "Um welchen Anbieter handelt es sich?",
+    "placeholder": "Name des Anbieters eingeben",
+    "complete": {
+      "description": "Um dir künftig Sparpotenziale anzeigen zu können, ergänze bitte deine Vertragsdetails."
+    }
+  },
+  "documents": {
+    "none": "Hier kannst du Rechnungen und Vertragsdokumente zu deinen Verträgen ablegen.",
+    "title": "Vertragsdokumente",
+    "description": "Hier kannst du Bilder und PDFs hochladen"
+  }
+}

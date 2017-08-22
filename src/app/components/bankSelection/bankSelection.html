@@ -1,0 +1,49 @@
+<div class="bank-selection">
+    <md-input-container>
+        <input
+            mdInput
+            class="margin-bottom-none"
+            [placeholder]="'bankSelection.search' | translate"
+            type="search"
+            name="search"
+            [(ngModel)]="searchTerm"
+            (ngModelChange)="debouncedSearch($event)"
+            required
+            (keyup.enter)="enter()"
+            autocomplete="off"/>
+        <span mdSuffix>
+            <i class="fa-decent fa-search"></i>
+            <span *ngIf="banksFound">{{ '(' + banks.length + ')' }}</span>
+        </span>
+    </md-input-container>
+    <div 
+        *ngIf="banksFound"
+        class="bank-selection-search-container margin-top-base margin-bottom-base">
+        <card>
+            <div card-content>
+                <div 
+                    class="clickable"
+                    *ngFor="let bank of banks; let i = index;"
+                    touchEffect
+                    (click)="selectBank(bank)">
+                    <div 
+                        class="bank-selection-search padding-vert-quarter margin-hor-base flex-center-row"
+                        [ngClass]="{
+                            'first' : i === 0
+                        }">
+                        <logo 
+                            class="margin-right-half margin-vert-quarter"
+                            type="bank"
+                            [partner]="bank">
+                        </logo>
+                        <div class="flex-favorite-child text-left padding-right-half">
+                            <div>{{ bank.description }}</div>
+                            <span class="text-decent">{{ bank.legacyBankIdentifier }}</span>
+                        </div>
+                        <i class="fa-decent fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </card>
+    </div>
+</div>

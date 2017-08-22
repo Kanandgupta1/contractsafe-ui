@@ -1,0 +1,13 @@
+.simple-line-chart-component {
+  .highcharts-series-group {
+    transform: translateY($spacing-base-vert);
+  }
+
+  .highcharts-area {
+    fill: lighten($accent-color, 30%) !important;
+  }
+
+  .highcharts-color-0, .highcharts-graph {
+    stroke: $accent-color !important;
+  }
+}

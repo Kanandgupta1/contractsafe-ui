@@ -1,0 +1,18 @@
+.contract-detail-card-component {
+  .circle,
+  .formular-container {
+    border: $border-standard;
+  }
+
+  .formular-container {
+    border-radius: $border-radius-base;
+  }
+
+  .circle {
+    border-width: 2px;
+  }
+
+  .circle {
+    padding: $spacing-base-hor/2;
+  }
+}

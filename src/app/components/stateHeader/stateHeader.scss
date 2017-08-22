@@ -1,0 +1,58 @@
+.state-header {
+  position: relative;
+  text-align: left;
+
+  .header-container {
+    width: 60%;
+  }
+
+  .state-header-content {
+    position: relative;
+  }
+
+  .completed-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+  }
+
+  // State summary
+  .state-summary {
+    position: relative;
+  }
+
+  &.no-content {
+    padding-bottom: 0;
+
+    .summary-bottom {
+      height: 2px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &.no-background {
+    background-color: transparent;
+    border-bottom: 0;
+  }
+
+  .summary-bottom {
+    position: relative;
+    z-index: 1;
+
+    card {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(50%);
+    }
+  }
+
+  .absolute-container {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,-50%);
+  }
+}

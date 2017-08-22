@@ -1,0 +1,8 @@
+.badge {
+  font-weight: $font-weight-normal;
+}
+
+.badge-primary {
+  background-color: $brand-primary;
+  color: lighten($brand-primary, 40%);
+}

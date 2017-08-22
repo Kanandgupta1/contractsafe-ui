@@ -1,0 +1,35 @@
+<dropdown [(expanded)]="expanded" class="booking-dropdown-component">
+  <div 
+    dropdown-header
+    class="padding-hor-base dropdown-header padding-hor-half padding-vert-half flex-center-complete-row">
+    <div>
+      <span class="text-big text-accent">{{ 'month.' + booking.month | translate }}</span>
+      <i
+        class="fa-decent margin-hor-half"
+        [ngClass]="{
+          'fa-caret-up': expanded && booking.bookings.length,
+          'fa-caret-down': !expanded && booking.bookings.length
+        }">
+      </i>
+    </div>
+    <div class="text-right">
+      <div class="text-important" localeCurrency [symbol]="true">{{ totalAmount }}</div>
+      <div class="text-decent">{{ 'bookingDropdown.count' | translate:{ count:booking.bookings.length } }}</div>
+    </div>
+  </div>
+
+  <div dropdown-content>
+    <div *ngFor="let bookingDetail of booking.bookings">
+      <hr class="margin-none">
+      <div class="flex-center-complete-row padding-half padding-hor-double">
+        <logo [partner]="bookingDetail"></logo>
+        <div class="flex-favorite-child text-left padding-hor-double">
+          <div class="text-important">{{ bookingDetail.name }}</div>
+          <!-- TODO Add when booking date exists -->
+          <!--<div class="text-decent" localeDate="fullDate">{{ bookingDetail.date }}</div>-->
+        </div>
+        <span class="text-danger" localeCurrency [symbol]="true">{{ bookingDetail.amount }}</span>
+      </div>
+    </div>
+  </div>
+</dropdown>

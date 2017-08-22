@@ -1,0 +1,14 @@
+.document-viewer-component {
+  .image-container {
+    align-items: center;
+  }
+
+  md-progress-spinner {
+    width: 35px;
+    height: 35px;
+  }
+
+  image-viewer {
+    height: 100%;
+  }
+}

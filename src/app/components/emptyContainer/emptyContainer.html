@@ -1,0 +1,15 @@
+<div class="empty-container-component">
+  <div
+    *ngIf="!isEmpty">
+    <ng-template 
+      [ngTemplateOutlet]="contentTemplate">
+    </ng-template>
+  </div>
+
+  <div
+    *ngIf="isEmpty"
+    [@empty]="isEmpty"
+    class="text-centered text-important inner-box padding-double">
+    {{ key + '.empty' | translate }}
+  </div>
+</div>

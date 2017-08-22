@@ -1,0 +1,11 @@
+<div class="router-tab-component flex-parent-row">
+  <a
+    *ngFor="let route of routes"
+    class="hide-link flex-favorite-child padding-hor-base padding-vert-half"
+    [routerLink]="route.route"
+    [routerLinkActive]="'is-active'"
+    touchEffect
+    touchEffectRadius="50">
+    {{ 'routerTab.' + route.name | translate }}
+  </a>
+</div>

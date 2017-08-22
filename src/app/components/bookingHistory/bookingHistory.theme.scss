@@ -1,0 +1,9 @@
+.booking-history-component {
+  tr {
+    border-bottom: $border-standard;
+  }
+
+  tr:first-of-type {
+    border-top: $border-standard;
+  }
+}

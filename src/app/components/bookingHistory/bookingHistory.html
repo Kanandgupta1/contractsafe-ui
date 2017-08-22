@@ -1,0 +1,14 @@
+<div class="booking-history-component">
+  <table>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td class="text-important">
+          {{ 'month.' + getMonth(booking) | translate }}
+        </td>
+        <td class="padding-vert-quarter">
+          <booking-entry [booking]="booking"></booking-entry>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

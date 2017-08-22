@@ -1,0 +1,42 @@
+<div class="flex-center-column fill-vertical">
+  <p class="text-title inner-box">
+    {{ 'onboarding.bank.desktop' | translate }}
+  </p>
+
+  <div>
+    <div class="flex-parent-row padding-hor-base">
+      <div 
+        class="flex-favorite-child padding-half"
+        *ngFor="let bank of preferredBanks"
+        (click)="options.parent.selectBank(bank)">
+        <bank-card [bank]="bank">
+          <logo 
+            type="bank"
+            [partner]="bank">
+          </logo>
+        </bank-card>
+      </div>
+
+      <div 
+        class="flex-favorite-child padding-half">
+        <bank-card 
+          (click)="enableSelection($event)"
+          [bank]="{
+            'shortName': 'bankSelection.furtherBody'
+          }">
+          {{ 'bankSelection.furtherTitle' | translate }}
+        </bank-card>
+      </div>
+    </div>
+  </div>
+
+  <div 
+    *ngIf="bankSelectionEnabled"
+    class="padding-hor-double padding-vert-base">
+    <bank-selection (onSearch)="search($event)" (onSelect)="options.parent.selectBank($event)"></bank-selection>
+  </div>
+
+  <p class="margin-top-base inner-box">
+    {{ 'onboarding.bank.description' | translate }}
+  </p>
+</div>

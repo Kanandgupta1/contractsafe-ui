@@ -1,0 +1,17 @@
+.summary-card-component {
+  position: relative;
+  background-color: #fff;
+
+  .symbol-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .symbol {
+    padding: 5px;
+    border:none;
+    background-color: #fff;
+  }
+}
